@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    username: sa
+    password: 123456
+    url: jdbc:sqlserver://localhost:1433;DatabaseName=test
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.login
+  mvc:
+    format:
+      date: yyyy-MM-dd
+mybatis:
+  type-aliases-package: com.zhijie.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml

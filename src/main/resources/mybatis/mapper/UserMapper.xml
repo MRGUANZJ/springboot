@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhijie.mapper.UserMapper">
+    <insert id="addUser">
+        insert into iuser(name,password,email) values (#{name},#{password},#{email})
+    </insert>
+    <update id="updateUser">
+        update iuser set name=#{name},password=#{password},email=#{email} where id=#{id}
+    </update>
+    <delete id="deleteUser">
+      delete from iuser where id=#{id}
+    </delete>
+    <select id="queryUserList" resultType="com.zhijie.pojo.User">
+          select * from iuser
+    </select>
+    <select id="queryUserById" resultType="com.zhijie.pojo.User">
+          select * from iuser where id=#{id}
+    </select>
+    <select id="login" resultType="com.zhijie.pojo.User">
+        select * from iuser where name=#{name} and password=#{password}
+    </select>
+    <select id="queryUserName" resultType="com.zhijie.pojo.User">
+        select * from iuser where name=#{name}
+    </select>
+</mapper>
